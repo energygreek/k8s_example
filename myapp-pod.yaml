@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8s-test-pod
+  labels:
+    app: k8s-test-pod
+spec:
+  containers:
+    - name: k8s-test-pod
+      image: hstao-docker.pkg.coding.net/mybook/docker/myflask:latest
+      imagePullPolicy: IfNotPresent
+  restartPolicy: Always
+  imagePullSecrets:
+    - name: docker-registry-secret    # 这里就是前文中创建的secret, 用来访问私库

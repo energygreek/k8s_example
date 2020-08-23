@@ -1,0 +1,5 @@
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 192.168.122.61:6443 --token abcdef.0123456789abcdef \
+    --discovery-token-ca-cert-hash sha256:7c3bbf72822e7741cbbd0f8d5f85ea09de74048eb331f1c0aa1f184fc26032b0 
+

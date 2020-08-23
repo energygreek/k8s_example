@@ -1,0 +1,15 @@
+apiVersion: v1  # 描述文件所遵循 kubernetestAPI的版本
+kind: Pod       # 描述的类型是pod
+metadata:
+  name: nginx-pod # pod name
+  labels:       # label
+    app: nginx-pod
+    env: test
+spec:
+  containers:
+    - name: nginx-pod   # container name
+      image: nginx:1.15  # image name and version 
+      imagePullPolicy: IfNotPresent  # pull image from remote repositry if not exsit
+      ports:
+        - containerPort: 80 # pod outgoing port
+  restartPolicy: Always
